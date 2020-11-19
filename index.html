@@ -5,17 +5,17 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js">
   
 	window.onload =function(){
-AFRAME.registercomponent("videohandler",{
+AFRAME.registerComponent("videohandler",{
 init:function(){
 var marker=this.el;
 this.vid=document.queryselector("#vid");
-marker.addEventListener("markerFound",function(){this.vid.play();}.blind(this));
+marker.addEventListener("markerFound",function(){this.vid.play();}.bind(this));
 marker.addEventListener(
 "markerLost";
 function(){
 this.vid.pause();
 this.vid.currentTime=0;
-}.blind(this)
+}.bind(this)
 });
 };
 </script>
@@ -29,7 +29,7 @@ left:0;
 background-color:rgba(0,0,0,0.8);
 z-index:9999;
 display:flex;
-justify.content:center;
+justify-content:center;
 align-items:center;
 }
 .arjs-Loader div{
@@ -42,13 +42,13 @@ color:white;
 <div class="arjs-loader">
 <div>Loading, please wait...</div>
 </div>
-<a-scene>
+<a-scene
 vr-mode-ui="enabled:false;"
 renderer="antialias:true;alpha:true;
 precision:mediump;"
 embedded
 arjs="trackingMethod:best;sourceType:webcam;
-debugUIEnabled:false;"
+debugUIEnabled:false;">
 <a-assets>
 <video 
 scr="video/cardvideo.mp4"
