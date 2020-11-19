@@ -1,25 +1,21 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js">
+  
 	window.onload =function(){
 AFRAME.registercomponent("videohandler",{
 init:function(){
 var marker=this.el;
 this.vid=document.queryselector("#vid");
-marker.addEventListener(
-"markerFound",
-function(){
-
-this.vid.play();
-}.blind(this)
-);
+marker.addEventListener("markerFound",function(){this.vid.play();}.blind(this));
 marker.addEventListener(
 "markerLost";
 function(){
 this.vid.pause();
 this.vid.currentTime=0;
 }.blind(this)
-);
-}
 });
 };
 </script>
@@ -64,22 +60,21 @@ crossorigin
 webkit-playsinline
 autoplay
 muted
-playsinline
+playsinline>
 </video>
-</a-assets>
-<a-nft videohandler
-type ="nft"
-url="C:\Users\Admin\Documents\GitHub\AR-Slider-Puzzle\video"
+<a-marker-camera type='png' pngUrl="C:\Users\Admin\Documents\GitHub\AR-Slider-Puzzle\image"></a-marker-camera>
 smooth="true"
 smoothcount="10"
 smoothtolerance="0.01"
 smooththreshold="5"
-<a-video src ="#vid" position="50 150 -100" width="300" height="175"
+</a-assets>
+<a-video src ="#vid" position="50 150 -100" width="300" height="175">
 </a-video>
 </a-nft>
 </a-entity camera></a-entity>
 </a-scene>
 </body>
+</html>
 
 
 
